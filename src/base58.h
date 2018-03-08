@@ -272,7 +272,7 @@ class CBitcoinAddress : public CBase58Data
 public:
     enum
     {
-        PUBKEY_ADDRESS = 125, // SimuGames addresses start with lowercase s
+        PUBKEY_ADDRESS = 125, // SimuCoin addresses start with lowercase s
         SCRIPT_ADDRESS = 5,
         PUBKEY_ADDRESS_TEST = 127,
         SCRIPT_ADDRESS_TEST = 196,

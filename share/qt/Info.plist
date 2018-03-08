@@ -15,19 +15,19 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleExecutable</key>
-	<string>SimuGames-Qt</string>
+	<string>SimuCoin-Qt</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.simugames.SimuGames-Qt</string>
+	<string>org.simucoin.SimuCoin-Qt</string>
         <key>CFBundleURLTypes</key>
         <array>
           <dict>
             <key>CFBundleTypeRole</key>
             <string>Editor</string>
             <key>CFBundleURLName</key>
-            <string>org.simugames.SimuGamesPayment</string>
+            <string>org.simucoin.SimuCoinPayment</string>
             <key>CFBundleURLSchemes</key>
             <array>
-              <string>simugames</string>
+              <string>simucoin</string>
             </array>
           </dict>
         </array>

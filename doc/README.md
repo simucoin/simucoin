@@ -1,4 +1,4 @@
-SimuGames 0.8.x BETA
+SimuCoin 0.8.x BETA
 ====================
 
 Copyright (c) 2009-2014 The developers
@@ -11,7 +11,7 @@ cryptographic software written by Eric Young ([eay@cryptsoft.com](mailto:eay@cry
 
 Intro
 ---------------------
-SimuGames is a free open source peer-to-peer electronic cash system that is
+SimuCoin is a free open source peer-to-peer electronic cash system that is
 completely decentralized, without the need for a central server or trusted
 parties.  Users hold the crypto keys to their own money and transact directly
 with each other, with the help of a P2P network to check for double-spending.
@@ -19,15 +19,15 @@ with each other, with the help of a P2P network to check for double-spending.
 
 Setup
 ---------------------
-You need the Qt4 run-time libraries to run SimuGames-Qt. On Debian or Ubuntu:
+You need the Qt4 run-time libraries to run SimuCoin-Qt. On Debian or Ubuntu:
 	`sudo apt-get install libqtgui4`
 
 Unpack the files into a directory and run:
 
-- bin/32/simugames-qt (GUI, 32-bit)
-- bin/32/simugamesd (headless, 32-bit)
-- bin/64/simugames-qt (GUI, 64-bit)
-- bin/64/simugamesd (headless, 64-bit)
+- bin/32/simucoin-qt (GUI, 32-bit)
+- bin/32/simucoind (headless, 32-bit)
+- bin/64/simucoin-qt (GUI, 64-bit)
+- bin/64/simucoind (headless, 64-bit)
 
 
 Other Pages

@@ -186,10 +186,10 @@ Value getwork(const Array& params, bool fHelp)
         );
 
     if (vNodes.empty() && !fTestNet)
-        throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "SimuGames is not connected!");
+        throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "SimuCoin is not connected!");
 
     if (IsInitialBlockDownload())
-        throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "SimuGames is downloading blocks...");
+        throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "SimuCoin is downloading blocks...");
 
     static CBlockTemplate* pblocktemplate = NULL;
     static uint256 curBlockHash = 0;
@@ -361,10 +361,10 @@ Value getblocktemplate(const Array& params, bool fHelp)
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid mode");
 
     if (vNodes.empty() && !fTestNet)
-        throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "SimuGames is not connected!");
+        throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "SimuCoin is not connected!");
 
     if (IsInitialBlockDownload())
-        throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "SimuGames is downloading blocks...");
+        throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "SimuCoin is downloading blocks...");
 
     // Update block
     static unsigned int nTransactionsUpdatedLast;

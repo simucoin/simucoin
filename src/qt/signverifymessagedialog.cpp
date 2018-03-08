@@ -24,11 +24,11 @@ SignVerifyMessageDialog::SignVerifyMessageDialog(QWidget *parent) :
 
 #if (QT_VERSION >= 0x040700)
     /* Do not move this to the XML file, Qt before 4.7 will choke on it */
-    ui->addressIn_SM->setPlaceholderText(tr("Enter a SimuGames address (e.g. sK5zEZZgWSK5wdAJZtpoSc6e5PHSupYdgW)"));
+    ui->addressIn_SM->setPlaceholderText(tr("Enter a SimuCoin address (e.g. sK5zEZZgWSK5wdAJZtpoSc6e5PHSupYdgW)"));
     ui->signatureOut_SM->setPlaceholderText(tr("Click \"Sign Message\" to generate signature"));
 
-    ui->addressIn_VM->setPlaceholderText(tr("Enter a SimuGames address (e.g. sK5zEZZgWSK5wdAJZtpoSc6e5PHSupYdgW)"));
-    ui->signatureIn_VM->setPlaceholderText(tr("Enter SimuGames signature"));
+    ui->addressIn_VM->setPlaceholderText(tr("Enter a SimuCoin address (e.g. sK5zEZZgWSK5wdAJZtpoSc6e5PHSupYdgW)"));
+    ui->signatureIn_VM->setPlaceholderText(tr("Enter SimuCoin signature"));
 #endif
 
     GUIUtil::setupAddressWidget(ui->addressIn_SM, this);

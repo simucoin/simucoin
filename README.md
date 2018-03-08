@@ -1,14 +1,14 @@
-SimuGames integration/staging tree
+SimuCoin integration/staging tree
 ================================
 
-http://simugames.org
+http://simucoin.org
 
 Copyright (c) 2009-2018 The developers
 
-What is SimuGames?
+What is SimuCoin?
 ----------------
 
-SimuGames is a new cryptocurrency which is more decentralized than Bitcoin. It prevents centralization of hashing power in pools, which is one of the main concerns of Bitcoin security. SimuGames was fairly launched with no premine.
+SimuCoin is a new cryptocurrency which is more decentralized than Bitcoin. It prevents centralization of hashing power in pools, which is one of the main concerns of Bitcoin security. SimuCoin was fairly launched with no premine.
  - Algorithm: SpreadX11
  - Block generation: 1 minute
  - Difficulty retargets: every block based on last 360 blocks
@@ -20,5 +20,5 @@ SimuGames is a new cryptocurrency which is more decentralized than Bitcoin. It p
 License
 -------
 
-SimuGames is released under the terms of the MIT license. See `COPYING` for more
+SimuCoin is released under the terms of the MIT license. See `COPYING` for more
 information or see http://opensource.org/licenses/MIT.

@@ -45,9 +45,9 @@ QString BitcoinUnits::description(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("simugames");
-    case mBTC: return QString("milli-simugames (1 / 1,000)");
-    case uBTC: return QString("micro-simugames (1 / 1,000,000)");
+    case BTC: return QString("simucoin");
+    case mBTC: return QString("milli-simucoin (1 / 1,000)");
+    case uBTC: return QString("micro-simucoin (1 / 1,000,000)");
     default: return QString("???");
     }
 }

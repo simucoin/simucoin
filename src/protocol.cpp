@@ -20,14 +20,14 @@
 static unsigned char pchMessageStartTest[4] = { 0xc2, 0xe3, 0xcb, 0xfa };
 
 // Simugames message start
-static unsigned char pchMessageStartSimuGames[4] = { 0xF7, 0xC4, 0x13, 0x37 };
+static unsigned char pchMessageStartSimuCoin[4] = { 0xF7, 0xC4, 0x13, 0x37 };
 
 void GetMessageStart(unsigned char pchMessageStart[], bool)
 {
     if (fTestNet)
         memcpy(pchMessageStart, pchMessageStartTest, sizeof(pchMessageStartTest));
     else
-        memcpy(pchMessageStart, pchMessageStartSimuGames, sizeof(pchMessageStartSimuGames));
+        memcpy(pchMessageStart, pchMessageStartSimuCoin, sizeof(pchMessageStartSimuCoin));
 }
 
 

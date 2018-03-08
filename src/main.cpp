@@ -38,7 +38,7 @@ unsigned int nTransactionsUpdated = 0;
 map<uint256, CBlockIndex*> mapBlockIndex;
 uint256 hashGenesisBlock;
 
-static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // SimuGames: starting difficulty is 1 / 2^20
+static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // SimuCoin: starting difficulty is 1 / 2^20
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
 uint256 nBestChainWork = 0;
@@ -74,7 +74,7 @@ map<uint256, set<uint256> > mapOrphanTransactionsByPrev;
 // Constant stuff for coinbase transactions we create:
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "SimuGames Signed Message:\n";
+const string strMessageMagic = "SimuCoin Signed Message:\n";
 
 double dHashesPerSec = 0.0;
 int64 nHPSTimerStart = 0;
@@ -1382,8 +1382,8 @@ static int clampTimespan(int val, int lo, int hi)
 
 unsigned int static GetNextWorkRequired(const CBlockIndex* pLastBlock, const CBlockHeader *)
 {
-    const int nTargetSpacing = (pLastBlock->nHeight > (int)getFirstHardforkBlock())? 60 : 600; // SimuGames: 1 minute after block 2200
-    const int nTargetTimespan = (pLastBlock->nHeight > (int)getSecondHardforkBlock())? 6*60*60 : 24*60*60; // SimuGames: 6 hours after second hardfork
+    const int nTargetSpacing = (pLastBlock->nHeight > (int)getFirstHardforkBlock())? 60 : 600; // SimuCoin: 1 minute after block 2200
+    const int nTargetTimespan = (pLastBlock->nHeight > (int)getSecondHardforkBlock())? 6*60*60 : 24*60*60; // SimuCoin: 6 hours after second hardfork
     const int nInterval = nTargetTimespan/nTargetSpacing;
 
     if (pLastBlock->nHeight <= nInterval + 2)
@@ -4869,7 +4869,7 @@ bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey* preservekey)
         return false;
 
     //// debug print
-    printf("SimuGamesMiner:\n");
+    printf("SimuCoinMiner:\n");
     printf("proof-of-work found  \n  hash: %s  \ntarget: %s\n", hash.GetHex().c_str(), hashTarget.GetHex().c_str());
     pblock->print();
     printf("generated %s\n", FormatMoney(pblock->vtx[0].vout[0].nValue).c_str());
@@ -4878,7 +4878,7 @@ bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey* preservekey)
     {
         LOCK(cs_main);
         if (pblock->hashPrevBlock != hashBestChain)
-            return error("SimuGamesMiner : generated block is stale");
+            return error("SimuCoinMiner : generated block is stale");
 
         // Remove key from key pool
         if (preservekey)
@@ -4893,15 +4893,15 @@ bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey* preservekey)
         // Process this block the same as if we had received it from another node
         CValidationState state;
         if (!ProcessBlock(state, NULL, pblock))
-            return error("SimuGamesMiner : ProcessBlock, block not accepted");
+            return error("SimuCoinMiner : ProcessBlock, block not accepted");
     }
 
     return true;
 }
 
-void static SimuGamesMiner(CWallet *pwallet)
+void static SimuCoinMiner(CWallet *pwallet)
 {
-    printf("SimuGamesMiner disabled\n");
+    printf("SimuCoinMiner disabled\n");
     /*SetThreadPriority(THREAD_PRIORITY_LOWEST);
     RenameThread("spreadcoin-miner");
 
@@ -4948,7 +4948,7 @@ void static SimuGamesMiner(CWallet *pwallet)
             return;
         CBlock *pblock = &pblocktemplate->block;
 
-        printf("Running SimuGamesMiner with %"PRIszu" transactions in block (%u bytes)\n", pblock->vtx.size(),
+        printf("Running SimuCoinMiner with %"PRIszu" transactions in block (%u bytes)\n", pblock->vtx.size(),
                ::GetSerializeSize(*pblock, SER_NETWORK, PROTOCOL_VERSION));
 
         CBufferStream<MAX_BLOCK_SIZE> PoKData(SER_GETHASH, 0);
@@ -5044,7 +5044,7 @@ void static SimuGamesMiner(CWallet *pwallet)
     } }
     catch (boost::thread_interrupted)
     {
-        printf("SimuGamesMiner terminated\n");
+        printf("SimuCoinMiner terminated\n");
         throw;
     }*/
 }
@@ -5071,7 +5071,7 @@ void GenerateBitcoins(bool fGenerate, CWallet* pwallet)
 
     minerThreads = new boost::thread_group();
     for (int i = 0; i < nThreads; i++)
-        minerThreads->create_thread(boost::bind(&SimuGamesMiner, pwallet));
+        minerThreads->create_thread(boost::bind(&SimuCoinMiner, pwallet));
 }
 
 // Amount compression:
